@@ -1,0 +1,30 @@
+<ui:composition template="/templates/main.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="title">Student Details</ui:define>
+    
+    <ui:define name="content">
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <h2>Student Information</h2>
+            <h:form>
+                <div style="margin-bottom: 20px;">
+                    <p><strong>ID:</strong> #{studentBean.currentStudent.studentId}</p>
+                    <p><strong>First Name:</strong> #{studentBean.currentStudent.firstName}</p>
+                    <p><strong>Last Name:</strong> #{studentBean.currentStudent.lastName}</p>
+                    <p><strong>Email:</strong> #{studentBean.currentStudent.email}</p>
+                    <p><strong>Phone:</strong> #{studentBean.currentStudent.phone}</p>
+                    <p><strong>Department:</strong> #{studentBean.currentStudent.department.departmentName}</p>
+                    <p><strong>Year of Study:</strong> #{studentBean.currentStudent.yearOfStudy}</p>
+                    <p><strong>Status:</strong> #{studentBean.currentStudent.status}</p>
+                </div>
+                
+                <div>
+                    <h:commandButton value="Edit" action="#{studentBean.prepareEdit(studentBean.currentStudent)}" styleClass="btn btn-success" style="margin-right: 10px;" />
+                    <h:commandButton value="Back to Students" action="students?faces-redirect=true" styleClass="btn" />
+                </div>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>

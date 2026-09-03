@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title><ui:insert name="title">Student Management System</ui:insert></title>
+    <h:outputStylesheet name="style.css" library="css" />
+</h:head>
+<h:body>
+    <div class="header">
+        <h1>Student Management System</h1>
+        <div>Admin User</div>
+    </div>
+    
+    <div class="nav-tabs">
+        <h:link outcome="index" value="Dashboard" styleClass="#{view.viewId == '/index.xhtml' ? 'active' : ''}"/>
+        <h:link outcome="students" value="Students" styleClass="#{view.viewId == '/students.xhtml' ? 'active' : ''}"/>
+        <h:link outcome="departments" value="Departments" styleClass="#{view.viewId == '/departments.xhtml' ? 'active' : ''}"/>
+        <h:link outcome="courses" value="Courses" styleClass="#{view.viewId == '/courses.xhtml' ? 'active' : ''}"/>
+        <h:link outcome="reports" value="Reports" styleClass="#{view.viewId == '/reports.xhtml' ? 'active' : ''}"/>
+        <h:link outcome="settings" value="Settings" styleClass="#{view.viewId == '/settings.xhtml' ? 'active' : ''}"/>
+    </div>
+
+    <div class="container">
+        <h:messages globalOnly="true" infoClass="messages info" errorClass="messages error" />
+        <ui:insert name="content">
+            Default Content
+        </ui:insert>
+    </div>
+</h:body>
+</html>
